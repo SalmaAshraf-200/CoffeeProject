@@ -1,0 +1,812 @@
+:root {
+    --mainColor:#D2691E;
+    --secondaryColor:#FFFBF2;
+    --mainFont:"DM Serif Text", serif;
+    --secondaryFont:"Libre Baskerville", serif;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: var(--secondaryColor);
+}
+
+.header{
+    width: 100%;
+    height: 100vh;
+    background-size: 100% 100%;
+    position: relative;
+    animation: slider 4s linear 1s infinite ;
+}
+
+.header input{
+    display: none;
+}
+.header label i{
+    color: var(--secondaryColor);
+    font-size: 30px;
+    position: absolute;
+    top: 64px;
+    right:  70px;
+    display: none;
+}
+
+.header .navbar {
+    width: 100%;
+    display: flex;
+    padding: 7vh 5%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header .navbar h1{
+    color: var(--secondaryColor);
+    font-family: var(--mainFont);
+    font-size: 50px;
+}
+
+.header .navbar ul{
+    width: 40%;
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+}
+
+.header .navbar ul li a{
+    color: var(--secondaryColor);
+    font-family: var(--secondaryColor);
+    font-size: 20px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.header .navbar ul .active a,
+.header .navbar ul li a:hover{
+    color: var(--mainColor);
+    border-bottom: 2px solid;
+}
+
+.header .banner{
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top: 100px;
+    text-align: center;
+}
+
+.header .banner i{
+    color: var(--secondaryColor);
+    font-size: 40px;
+}
+
+.header .banner .bannerData h3{
+    font-family: var(--secondaryFont);
+    color: var(--secondaryColor);
+    font-weight: bold;
+    font-size: 30px;
+}
+
+.header .banner .bannerData h2{
+    font-family: var(--mainFont);
+    color: var(--secondaryColor);
+    font-size: 100px;
+}
+
+.header .banner .bannerData h3:first-child{
+    color: var(--mainColor);
+}
+
+.header .overlay{
+    width: 100%;
+    height: 9vh;
+    background-image: url(../images/overlay-bottom.png);
+    background-size: 100% 100%;
+    position: absolute;
+    bottom: 0;
+}
+
+@keyframes slider {
+    from{
+        background-image:linear-gradient(rgba(50,23,1,0.441),rgba(50,23,1,0.441)),url(../images/carousel-2.jpg);
+    }
+    to{
+        background-image:linear-gradient(rgba(50,23,1,0.441),rgba(50,23,1,0.441)),url(../images/carousel-1.jpg);
+    }
+}
+@media screen and (max-width:1109px) {
+    .header .navbar ul{
+        width: 50%;
+    }
+    .header .banner{
+        margin-top: 50px;
+    }
+
+    .special .specialData{
+        padding: 5vh 5%;
+        text-align: center;
+    }
+
+    .special .specialData form{
+        width: 5%;
+    }
+}
+
+@media screen and (max-width:794px) {
+    .header .navbar{
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .header .navbar ul{
+        width: 100%;
+        flex-direction: column;
+        border-radius: 10px ;
+        box-shadow: 3px 3px 3px var(--mainColor);
+        padding: 20px;
+        /* padding: 3vh 5%; */
+        background-color: #2c1200c5;
+        margin-top: 20px;
+        transform: rotateX(90deg);
+        transition: .3s;
+        transform-origin: top;
+    }
+    .header .navbar ul li{
+        margin: 10px;
+    }
+    .header label i{
+        display: block;
+    }
+    .header input:checked + .navbar ul{
+        transform: rotateX(0deg);
+    }
+    .header .banner{
+        margin-top: -300px;
+    }
+
+    .sec2 .sec2Bottom{
+        flex-direction: column;
+    }
+
+    .sec2 .sec2Bottom div{
+        width: 70%;
+    }
+
+    .sec2 .sec2Bottom .part2{
+        width: 40%;
+    }
+
+    .sec3 .sec3Bottom{
+        grid-template-columns: 1fr;
+    }
+
+    .special .specialData h2{
+        font-size: 10px;
+    }
+
+}
+
+@media screen and (max-width:600px) {
+    .header{
+        height: 70vh;
+    }
+    .header .banner .bannerData h2{
+        font-size: 70px;
+    }
+    .header .banner .bannerData h3{
+        font-size: 20px;
+    }
+    .header .navbar h1{
+        font-size: 30px;
+    }
+    .header label i{
+        font-size: 20px;
+        margin-top: -10px;
+        margin-right: -40px;
+    }
+    .header .banner i{
+        font-size: 20px;
+    }
+}
+
+.sec2,
+.sec3,
+.menu,
+.clientSays{
+    width: 100%;
+    padding: 5vh 10%;
+}
+
+.sec2 .sec2Top,
+.sec3 .sec3Top,
+.menu .topMenu,
+.clientSays .clientSaysTop{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+}
+
+.sec2 .sec2Top .line,
+.sec3 .sec3Top .line,
+.menu .topMenu .line,
+.clientSays .clientSaysTop .line{
+    width: 2px;
+    height: 100px;
+    background-color: var(--mainColor);
+}
+
+.sec2 .sec2Top h3,
+.sec3 .sec3Top h3,
+.menu .topMenu h3,
+.clientSays .clientSaysTop h3{
+    font-size: 30px;
+    color: var(--mainColor);
+    font-family: var(--secondaryFont);
+    text-transform: uppercase;
+}
+
+.sec2 .sec2Top h2,
+.sec3 .sec3Top h2,
+.menu .topMenu h2,
+.clientSays .clientSaysTop h2{
+    color: black;
+    font-family: var(--mainFont);
+    font-size: 60px;
+    text-transform: capitalize;
+}
+
+.sec2 .sec2Bottom{
+    width: 100%;
+    display: flex;
+    gap: 50px;
+    align-items: center;
+}
+
+.sec2 .sec2Bottom div{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    align-items: center;
+    width: 33%;
+}
+
+.sec2 .sec2Bottom .part2 img{
+    width: 150%;
+}
+
+.sec2 .sec2Bottom div h1{
+    color: black;
+    font-family: var(--mainFont);
+    font-size: 40px;
+    font-weight: bold;
+    text-transform: capitalize;
+}
+
+.sec2 .sec2Bottom .part1 h3{
+    /* width: 300px; */
+    color: black;
+    font-family: var(--secondaryFont);
+    font-size: 17px;
+    font-weight: lighter;
+    margin-top: 30px;
+}
+
+.sec2 .sec2Bottom .part1 p{
+    /* width: 300px; */
+    color: rgb(70, 70, 70);
+    font-family: var(--secondaryFont);
+    font-size: 17px;
+    margin-top: 20px;
+    font-weight: lighter;
+}
+
+.sec2 .sec2Bottom div h3,
+.bookingSection .booking .content .left h3{
+    color: black;
+    font-family: var(--secondaryFont);
+    font-size: 20px;
+}
+
+.sec2 .sec2Bottom .part3 h3 i,
+.bookingSection .booking .content .left h3 i{
+    color: var(--mainColor);
+    margin-right: 5px;
+}
+
+.sec2 .sec2Bottom div p{
+    font-size: 17px;
+    font-family: var(--secondaryFont);
+    font-weight: bold;
+    color: #444;
+
+}
+
+.sec2 .sec2Bottom div button{
+    border-radius: 0px;
+    border-color: var(--mainColor);
+    color: var(--mainColor);
+    font-family: var(--secondaryFont);
+    font-size: 17px;
+    background-color: rgb(86, 1, 1);
+    padding: 5px 15px;
+}
+
+.sec2 .sec2Bottom .part3 button{
+    border-radius: 0px;
+    border-color: rgb(86, 1, 1);
+    color: rgb(86, 1, 1);
+    background-color: var(--mainColor);
+}
+
+.sec3 .sec3Bottom{
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 60px;
+    margin-top: 100px;
+}
+
+.sec3 .sec3Bottom .card{
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.sec3 .sec3Bottom .card img{
+    width: 70%;
+    border: 1px solid var(--mainColor);
+    border-radius: 20px;
+}
+
+.sec3 .sec3Bottom .card .cardData h2{
+    color: black;
+    font-family: var(--mainFont);
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.sec3 .sec3Bottom .card .cardData i{
+    width: 40px;
+    height: 40px;
+    font-size: 25px;
+    background-color: var(--mainColor);
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sec3 .sec3Bottom .card .cardData p{
+    color: #444;
+    font-family: var(--secondaryColor);
+    font-size: 18px;
+    margin-top: 20px;
+}
+
+.special{
+    width: 100%;
+    background-image:linear-gradient(rgba(44, 7, 7, 0.792),rgba(49, 28, 28, 0.91)),url(../images/bg.jpg);
+    margin-top: 50px;
+}
+
+.special .topImg,
+.bookingSection .booking .topImg{
+    width: 100%;
+    height: 6vh;
+    background-image: url(../images/overlay-top.png);
+    background-size: 100% 100%;
+}
+
+.special .bottomImg,
+.bookingSection .booking .bottomImg{
+    width: 100%;
+    height: 6vh;
+    background-image: url(../images/overlay-bottom.png);
+    background-size: 100% 100%;
+}
+
+.special .specialData{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    padding: 10vh 0;
+
+}
+
+.special .specialData h2{
+    color: var(--mainColor);
+    font-family: var(--mainFont);
+    font-size: 100px;
+}
+
+.special .specialData h3{
+    color: var(--secondaryColor);
+    font-family: var(--mainFont);
+    font-size: 60px;
+}
+
+.special .specialData h4{
+    color: var(--secondaryColor);
+    font-family: var(--mainFont);
+    font-size: 40px;
+}
+
+.special .specialData form{
+    width: 27%;
+    height: 6vh;
+    border: 2px solid var(--mainColor);
+    background-color: var(--secondaryColor);
+    padding: 2px;
+    display: flex;
+}
+
+.special .specialData form input{
+    height: 5vh;
+    border: none;
+    outline: none;
+}
+
+.special .specialData form input[type="text"]{
+    background-color: bisque;
+    width: 75%;
+    height: 100%;
+    padding: 5px 20px;
+}
+
+.special .specialData form input[type="submit"]{
+    background-color: rgb(52, 20, 20);
+    width: 25%;
+    font-family: var(--mainFont);
+    font-size: 20px;
+    color: var(--mainColor);
+}
+
+.menu .bottomMenu{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 80px;
+}
+
+.menu .bottomMenu h2{
+    font-size: 35px;
+    font-family: var(--mainFont);
+    margin: 0 0 20px 20px;
+}
+
+.menu .bottomMenu .element{
+    width: 90%;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.menu .bottomMenu .element .img{
+    width: 40%;
+    position: relative;
+}
+
+.menu .bottomMenu .element .img img{
+    width: 100%;
+    border-radius: 50%;
+    border: 1px solid var(--secondaryColor);
+}
+
+.menu .bottomMenu .element .img span{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: var(--mainColor);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 15px;
+    right: -5px;
+}
+
+.menu .bottomMenu .element .data h2{
+    font-size: 25px;
+    margin: 0 0 10px 0;
+}
+
+.menu .bottomMenu .element .data p{
+    font-family: var(--secondaryFont);
+    color: #444;
+}
+
+.bookingSection{
+    width: 100%;
+    padding: 5vh 10%;
+}
+
+.bookingSection .booking{
+    width: 100%;
+    background-image:linear-gradient(rgba(44, 7, 7, 0.792),rgba(49, 28, 28, 0.91)), url(../images/bg.jpg);
+}
+
+.bookingSection .booking .content{
+    width: 100%;
+    padding: 5%;
+    display: flex;
+    gap: 70px;
+    justify-content: space-between;
+}
+
+.bookingSection .booking .content .left,
+.bookingSection .booking .content .right{
+    width: 50%;
+}
+
+.bookingSection .booking .content .left h2{
+    color: var(--mainColor);
+    font-family: var(--mainFont);
+    font-size: 90px;
+    margin-top: 20px;
+}
+
+.bookingSection .booking .content .left .big{
+    font-family: var(--secondaryFont);
+    font-size: 25px;
+    font-weight: bold;
+    color: var(--secondaryColor);
+}
+
+.bookingSection .booking .content .left p{
+    font-family: var(--secondaryFont);
+    font-size: 16px;
+    color: #ccc;
+    margin: 25px 0;
+}
+
+.bookingSection .booking .content .left h3{
+    color: var(--secondaryColor);
+    font-size: 15px;
+    margin: 20px 10px;
+    font-family: var(--secondaryFont);
+}
+
+.bookingSection .booking .content .right h2{
+    color: var(--secondaryColor);
+    font-family: var(--mainFont);
+    font-size: 50px;
+    text-transform: capitalize;
+    margin-bottom: 20px;
+}
+
+.bookingSection .booking .content .right form{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.bookingSection .booking .content .right form input,
+.bookingSection .booking .content .right form select{
+    width: 95%;
+    padding: 10px 20px;
+    background-color: transparent;
+    border: 2px solid var(--mainColor);
+    border-radius: 15px;
+    text-align: center;
+    color: var(--secondaryColor);
+    font-size: 18px;
+    font-family: var(--secondaryFont);
+}
+
+.bookingSection .booking .content .right form input[type="submit"]{
+    background-color: #d2691e84;
+    color: black;
+}
+
+.bookingSection .booking .content .right form select option{
+    background-color: var(--secondaryColor);
+    color: black;
+}
+
+.clientSays .clientSaysBottom{
+    width: 100%;
+    display: flex;
+    gap: 100px;
+    justify-content: center;
+    align-items: center;
+    margin-top: 70px;
+}
+
+.clientSays .clientSaysBottom .client{
+    text-align: center;
+}
+
+.clientSays .clientSaysBottom .client .top{
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.clientSays .clientSaysBottom .client .top img{
+    border: 2px solid var(--mainColor);
+    border-radius: 20px;
+}
+
+.clientSays .clientSaysBottom .client .top .data h3{
+    font-family: var(--mainFont);
+    font-size: 25px;
+}
+
+.clientSays .clientSaysBottom .client .top .data p{
+    font-family: var(--secondaryFont);
+    color: #000;
+    font-weight: bold;
+    font-size: 17px;
+}
+
+.clientSays .clientSaysBottom .client p{
+    color: #444;
+    font-family: var(--secondaryFont);
+    font-size: 15px;
+}
+
+.animation{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 25px;
+}
+
+.animation .circle{
+    width: 30px;
+    height: 30px;
+    background-color: var(--mainColor);
+    border: 2px solid var(--mainColor);
+    border-radius: 50%;
+    animation-name: moveTopDown;
+    animation-duration: 0.5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    animation-direction: alternate;
+}
+
+.animation .circle:nth-child(2){
+    animation-delay: 0.5s;
+}
+
+.animation .circle:last-child{
+    animation-delay: 1s;
+}
+
+@keyframes moveTopDown{
+    0%{
+        transform:translateY(-20px);
+    }
+
+    50%{
+       transform: translateY(0); 
+    }
+
+    100%{
+        transform: translateY(20px);
+    }
+}
+
+.footer{
+    width: 100%;
+    background-image: linear-gradient(rgba(44, 7, 7, 0.792),rgba(49, 28, 28, 0.91)),url(../images/bg.jpg);
+    background-size: 100% 100%;
+    margin-top: 30px;
+}
+
+.footer .topImg{
+    width: 100%;
+    height: 7vh;
+    background-image: url(../images/overlay-top.png);
+    background-size: 100% 100%;
+}
+
+.footer .top{
+    width: 100%;
+    padding: 5vh 7%;
+    display: flex;
+    justify-content: space-between;
+    color: var(--secondaryColor);
+}
+
+.footer .top h2{
+    font-family: var(--mainFont);
+    font-size: 27px;
+    margin: 15px 0;
+    text-transform: uppercase;
+}
+
+.footer .top div{
+    width: 22%;
+}
+
+.footer .top .location h3{
+    font-size: 17px;
+    font-family: var(--secondaryFont);
+    margin: 15px 0;
+}
+
+.footer .top .location h3 i{
+    font-size: 20px;
+    margin-right: 10px;
+}
+
+.footer .top div p{
+    font-family: var(--secondaryFont);
+    font-size: 16px;
+    margin: 10px 0;
+}
+
+.footer .top .contact .icon{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    /* justify-content: space-around; */
+    gap: 20px;
+    margin-top: 15px;
+}
+
+.footer .top .contact .icon i{
+    width: 30px;
+    height: 30px;border: 2px solid var(--secondaryColor);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer .top form{
+    width: 100%;
+    margin: auto;
+    display: flex;
+}
+
+.footer .top form input{
+    padding: 10px 12px;
+    border: 1px solid var(--secondaryColor);
+    outline: none;
+    font-family: var(--secondaryFont);
+}
+
+.footer .top form input[type="text"]{
+    width: 70%;
+}
+
+.footer .top form input[type="submit"]{
+    background-color: var(--mainColor);
+    color: rgb(70, 21, 21);
+    width: 30%;
+}
+
+.footer .bottom{
+    text-align: center;
+    color: var(--secondaryColor);
+    font-family: var(--secondaryFont);
+    font-size: 17px;
+    font-weight: bold;
+}
+
+.footer .bottom p{
+    margin: 20px 0;
+}
+
+.footer .bottom p a{
+    color: var(--mainColor);
+    font-family: var(--mainFont);
+}
+
